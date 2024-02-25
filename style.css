@@ -1,17 +1,19 @@
 #containerDiv {
     border: 1px solid black;
-    height: 992px;
-    width: 992px;
     display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    flex-flow: row wrap;
 }
 
 #settingsBar {
     border: 1px solid black;
-    height: 50px;
-    width: 992px;
+    height: 75px;
+    width: 500px;
 
+}
+
+.gridDiv {
+    border: 1px solid black;
+    box-sizing: border-box;
 }
 
 /*.gridDiv:hover {
