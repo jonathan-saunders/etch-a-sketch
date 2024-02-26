@@ -11,9 +11,12 @@ const colors = [
 
 const height = 500;
 const width = 500;
-let gridSize = 34;
-let gridDivSize = width/gridSize;
+let gridSize = 16;
+
+//let gridDivSize = width/gridSize;
 let gridSpace = 100/gridSize;
+
+
 
 // Set the height and width of the container div
 let containerDiv = document.getElementById("containerDiv");
@@ -22,7 +25,7 @@ containerDiv.style.width = `${width}px`;
 
 // Test variable output
 let testoutput = document.getElementById("testoutput");
-testoutput.innerHTML = gridDivSize;
+testoutput.innerHTML = gridSize;
 let gridSpaceLabel = document.getElementById("gridSpaceLabel");
 gridSpaceLabel.innerHTML = gridSpace;
 
@@ -40,19 +43,17 @@ function createGrid(){
     })
 }
 
-for (let i = 0; i < ((gridSize*gridSize)); i++){
+
+for (let i = 0; i < (gridSize*gridSize); i++){
     createGrid();
 }
-
 
 
 /*document.getElementById("size").onclick = function(){
-    squares = prompt("How many squares?");
-    gridDivSize = squares;
-
-    createGrid();
-}
+    var userInput = window.prompt("How many squares?");
+};
 */
+
 
 
 
