@@ -8,11 +8,20 @@
 </head>
 <body>
     <div id="settingsBar">
-        <button id="size">Size</button><br>
-        Grid Size: <label id="testoutput">0</label><br>
-        Grid Space (main axis): <label id="gridSpaceLabel"></label>%<br>
+        <button id="size" class="button">New grid</button><br>
+        <button id="reset" class="button">Reset</button><br>
+        <button id="rainbow" class="button">Rainbow</button><br>
     </div>
-    <div id="containerDiv"></div>
+    <div id="containerDiv"></div><br>
+    <div id="instructions">
+    <h2>Instructions:</h2>
+    <p>
+        <li>Click 'New grid' to generate the first grid.</li>
+        <li>Input a grid size less than 100 (i.e '16' will create a 16x16 grid).</li>
+        <li>'Reset' will clear the screen, and regenerate a 16x16 grid.</li>
+        <li>'Rainbow' will set each cell entered with the mouse to a random color.</li>
+    </p>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

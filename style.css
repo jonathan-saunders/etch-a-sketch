@@ -2,13 +2,30 @@
     border: 1px solid black;
     display: flex;
     flex-flow: row wrap;
+    background-color: #808080;
+}
+
+#instructions {
+    border: 1px solid black;
+    width: 496px;
+    padding-left: 4px;
 }
 
 #settingsBar {
     border: 1px solid black;
-    height: 75px;
+    background-color: #ffb3ba;
+    display: flex;
+    height: 25px;
     width: 500px;
+    align-items: center;
 
+}
+
+.button {
+    color: black;
+    font-weight: bold;
+    background-color: #bae1ff;
+    border-radius: 4px;
 }
 
 .gridDiv {
@@ -16,7 +33,3 @@
     box-sizing: border-box;
 }
 
-/*.gridDiv:hover {
-    background-color: yellow;
-}
-*/

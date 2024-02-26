@@ -11,48 +11,60 @@ const colors = [
 
 const height = 500;
 const width = 500;
-let gridSize = 16;
+const sizeButton = document.getElementById('size');
+const resetButton = document.getElementById('reset');
+const rainbowButton = document.getElementById('rainbow');
 
-//let gridDivSize = width/gridSize;
-let gridSpace = 100/gridSize;
-
-
-
-// Set the height and width of the container div
-let containerDiv = document.getElementById("containerDiv");
+containerDiv.innerHTML = "";
 containerDiv.style.height = `${height}px`;
 containerDiv.style.width = `${width}px`;
 
-// Test variable output
-let testoutput = document.getElementById("testoutput");
-testoutput.innerHTML = gridSize;
-let gridSpaceLabel = document.getElementById("gridSpaceLabel");
-gridSpaceLabel.innerHTML = gridSpace;
-
-function createGrid(){
+function createGrid(gridSpace){
     let gridDiv = document.createElement("div");
     gridDiv.className = "gridDiv";
     gridDiv.style.flex = "1 0" + `${gridSpace}%`;
-    //gridDiv.style.height = `${gridSpace}%`;
     containerDiv.appendChild(gridDiv);
 
-    var color = colors[Math.floor(Math.random()*colors.length)];
+    var color = "black";
 
-    gridDiv.addEventListener("mouseenter", (event) => {
+    gridDiv.addEventListener("mouseover", (event) => {
         gridDiv.style.backgroundColor = color;
     })
+
+    rainbowButton.addEventListener('click', event => {
+        color = colors[Math.floor(Math.random()*colors.length)];
+    })
+
 }
 
+sizeButton.addEventListener('click', event => {
+    let gridSize;
+    do {
+        gridSize = window.prompt("What size? (must be 100 or less)");
+    } while (gridSize > 100 || isNaN(gridSize) || gridSize.trim() === "");
 
-for (let i = 0; i < (gridSize*gridSize); i++){
-    createGrid();
-}
+    let gridSpace = 100/gridSize;
+    let containerDiv = document.getElementById("containerDiv");
+    containerDiv.innerHTML = "";
+    containerDiv.style.height = `${height}px`;
+    containerDiv.style.width = `${width}px`;
+
+    for (let i = 0; i < (gridSize*gridSize); i++){
+        createGrid(gridSpace);
+    }
+
+    resetButton.addEventListener('click', event => {
+        containerDiv.innerHTML = "";
+        for (let i = 0; i < (16*16); i++){
+            createGrid(6.25);
+        }
+    });
+});
 
 
-/*document.getElementById("size").onclick = function(){
-    var userInput = window.prompt("How many squares?");
-};
-*/
+
+
+
 
 
 
